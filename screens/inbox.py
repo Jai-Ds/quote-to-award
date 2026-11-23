@@ -76,7 +76,8 @@ for a in pending:
 
 quiet = [b for b in replied if not any(a["vendor"] == b["vendor"] for a in pending)]
 if quiet:
-    st.html(f'<div class="insight"><div><b>Nothing needed from you for {len(quiet)} vendor(s):</b> {ui.esc(", ".join(f"{ui.short(b['vendor'])} ({b['stage'].lower()})" for b in quiet))}.</div></div>')
+    who = ", ".join(f"{ui.short(b['vendor'])} ({b['stage'].lower()})" for b in quiet)
+    st.html(f'<div class="insight"><div><b>Nothing needed from you for {len(quiet)} vendor(s):</b> {ui.esc(who)}.</div></div>')
 if len(replied) < len(boxes):
     st.caption(f"{len(replied)} of {len(boxes)} vendors have replied.")
 st.page_link("screens/compare.py", label="Compare the quotes", icon=":material/table_chart:")
