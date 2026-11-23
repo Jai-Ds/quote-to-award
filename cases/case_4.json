@@ -1,0 +1,45 @@
+{
+ "id": 4,
+ "title": "A delivery claim that our own records contradict",
+ "role": "Coimbatore plant manager",
+ "why": "A vendor's questionnaire answer is a claim, not a fact. Delivery and defect claims are checked against what we actually received.",
+ "chat": [
+  {
+   "who": "Tungabhadra Actives LLP",
+   "kind": "vendor",
+   "text": "Questionnaire answer: on-time delivery 96%."
+  },
+  {
+   "who": "Rule engine",
+   "kind": "agent",
+   "text": "Flag on Tungabhadra's lines: says 96% on time; our receipts over 12 months show 79%.",
+   "detail": [
+    "Propanediol (bio-based): claim 96%, our records 79%",
+    "Niacinamide (PC grade): claim 96%, our records 75%",
+    "D-Panthenol: claim 96%, our records 80%",
+    "Caffeine anhydrous: claim 96%, our records 75%",
+    "Phenoxyethanol + Ethylhexylglycerin blend: claim 96%, our records 79%",
+    "Copper Tripeptide-1 solution: claim 96%, our records 79%",
+    "Acetyl Tetrapeptide-3 solution: claim 96%, our records 79%"
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "rule": "The vendor's on-time claim was read from its documents",
+   "passed": true,
+   "detail": "claim 96.0"
+  },
+  {
+   "rule": "The claim is flagged as contradicted by our records",
+   "passed": true,
+   "detail": "7 line(s) flagged"
+  },
+  {
+   "rule": "Our records, not the vendor's figure, are what the table shows",
+   "passed": true,
+   "detail": "79%, 75%, 80%, 75%, 79%, 79%, 79%"
+  }
+ ],
+ "passed": true
+}

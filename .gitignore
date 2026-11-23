@@ -1,0 +1,8 @@
+runtime/
+.cases_runtime/
+.streamlit/secrets.toml
+.env
+__pycache__/
+*.pyc
+*.tmp
+.claude/

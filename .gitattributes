@@ -1,0 +1,6 @@
+*.pdf binary
+*.xlsx binary
+*.docx binary
+*.jpg binary
+*.png binary
+replay_seed/*.json -text

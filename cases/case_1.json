@@ -1,0 +1,91 @@
+{
+ "id": 1,
+ "title": "A price in litres with no density",
+ "role": "Coimbatore plant manager",
+ "why": "Kovai priced glycerin per litre and gave no density, so it can't be compared per kg. The system must not guess. It asks, waits, then re-ranks when the answer arrives.",
+ "chat": [
+  {
+   "who": "Kovai Finechem Pvt. Ltd.",
+   "kind": "vendor",
+   "text": "Please find our offer attached. We use our own format as our ERP generates this, hope that is OK.",
+   "detail": [
+    "Kovai_Finechem_Offer.xlsx",
+    "COA_Kovai_Propanediol.pdf"
+   ]
+  },
+  {
+   "who": "Vendor Liaison agent",
+   "kind": "draft",
+   "text": "Dear R. Selvam,\n\nThank you for your offer and the propanediol COA. We will review the offer in your format. To complete our evaluation, please provide the following:\n\n1. RM-002 Glycerin (vegetable, IP grade): your offer is quoted per litre but no density is given, so we cannot convert to kg. Please state the density of the glycerin in g/mL or kg/L, with the temperature at which it applies, and confirm the quoted price per kg.\n\n2. Certificate of Analysis (COA) from a recent batch for each of the 10 lines (RM-001 to RM-010), showing batch number, manufacturing date and retest date. We have the propanediol COA; please send the other nine.\n\n3. Safety Data Sheet (SDS) for each of the 10 lines, and written confirmation that each material is suitable for leave-on scalp use under India's Cosmetics Rules, 2020.\n\nPlease reply with the items numbered as above. Thank you.\n\nRegards,\nProcurement Manager, Coimbatore plant\nKesavi Personal Care",
+   "detail": [
+    "The plant manager approved this draft, and it was sent."
+   ]
+  },
+  {
+   "who": "Rule engine",
+   "kind": "agent",
+   "text": "Before the answer, glycerin is recommended to Vembanad. Kovai can't be ranked yet."
+  },
+  {
+   "who": "Kovai Finechem Pvt. Ltd.",
+   "kind": "vendor",
+   "text": "Dear Team, density of our refined glycerine is 1.26 g/ml at 25C. Regards, R. Selvam"
+  },
+  {
+   "who": "Agents",
+   "kind": "steps",
+   "text": "7 automated steps",
+   "detail": [
+    "Orchestrator: New message received. Agents activated.",
+    "Intake Router: Classified as other: Kovai Finechem (R. Selvam) states the density of their refined glycerine as 1.26 g/ml at 25C, providing a technical data point with no commercial terms, no offer, no question, and no request for sensitive information.",
+    "Model router: Extraction sent to Haiku: text documents.",
+    "Document Extractor: Updated the database: 1 lines. Vendor V01 (Kovai Finechem) follow-up email gives density 1.26 g/ml at 25C for Refined Glycerine, saved to RM-002; the email does not answer the COA, SDS, or cosmetic-suitability requests, and the stored record's claims are unchanged.",
+    "Questionnaire Analyst: Recorded 1 answers. Now 100% answered, 78% backed by evidence.",
+    "Rule engine: Normalised 6 of 7 lines to rupees per spec kg. 0 open question(s), 1 risk flag(s). Evaluation data updated.",
+    "Vendor Liaison: Drafted an email covering 2 point(s). Waiting for approval."
+   ]
+  },
+  {
+   "who": "Rule engine",
+   "kind": "agent",
+   "text": "Glycerin now goes to Kovai. Rs 0.70/kg dearer than Vembanad, but its MOQ is 200 kg against 500 kg, so holding stock costs less.",
+   "detail": [
+    "Kovai: Rs 112.70/kg, MOQ 200 kg",
+    "Vembanad: Rs 112.00/kg, MOQ 500 kg"
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "rule": "Kovai's glycerin price was read as per litre",
+   "passed": true,
+   "detail": "142.0 per l"
+  },
+  {
+   "rule": "No price per kg was guessed",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "rule": "A question about density was drafted for approval",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "rule": "The density answer converted the price: 142 / 1.26 = Rs 112.70 per kg",
+   "passed": true,
+   "detail": "Rs 112.70"
+  },
+  {
+   "rule": "Glycerin is now recommended to Kovai",
+   "passed": true,
+   "detail": "V01: Rs 0.70/kg dearer than Vembanad, but its MOQ is 200 kg against 500 kg, so holding stock costs less"
+  },
+  {
+   "rule": "The reason is holding cost, not price",
+   "passed": true,
+   "detail": "Rs 0.70/kg dearer than Vembanad, but its MOQ is 200 kg against 500 kg, so holding stock costs less"
+  }
+ ],
+ "passed": true
+}

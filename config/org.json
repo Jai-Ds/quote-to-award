@@ -1,0 +1,56 @@
+{
+  "company": "Kesavi Personal Care",
+  "plants": {
+    "CBE": {
+      "name": "Coimbatore",
+      "makes": "Hair growth serum for the Indian market",
+      "buys_on": "Cost, with reliable supply for the peptides",
+      "rfx": "KPC-2026-014, run live in this demo"
+    },
+    "MAA": {
+      "name": "Chennai",
+      "makes": "Hair growth serum for export",
+      "buys_on": "Quality and certification: the export customer audits suppliers for ISO 22716 (cosmetic GMP)",
+      "rfx": "KPC-2026-011, processed earlier and loaded as finished records"
+    }
+  },
+  "users": {
+    "cbe_pm": {"name": "Coimbatore plant manager", "role": "plant_manager", "plant": "CBE"},
+    "maa_pm": {"name": "Chennai plant manager", "role": "plant_manager", "plant": "MAA"},
+    "cat_mgr": {"name": "Category manager", "role": "category_manager", "plant": null},
+    "admin": {"name": "Admin", "role": "admin", "plant": null}
+  },
+  "approval_rules": {
+    "plant_limit_inr": 2500000,
+    "plant_limit_note": "A plant manager approves their own award up to Rs 25 lakh.",
+    "cross_plant_rule": "If two plants award the same material to different vendors, both decisions go to the category manager before they are final.",
+    "min_valid_quotes": 3,
+    "min_valid_quotes_note": "An award on a line with fewer than 3 comparable quotes needs a written reason in the approval note."
+  },
+  "group_terms": [
+    {
+      "vendor": "V03",
+      "rm_code": "RM-002",
+      "material": "Glycerin (vegetable, IP grade)",
+      "min_annual_kg": 6000,
+      "discount_pct": 4,
+      "scope": "Combined annual volume across all Kesavi plants",
+      "source": "Vembanad group price agreement, on file with the category manager"
+    }
+  ],
+  "chennai": {
+    "quotes": [
+      {"rm_code": "RM-002", "material": "Glycerin (vegetable, IP grade)", "vendor": "V01", "landed_inr_per_kg": 113.40, "moq_kg": 200, "note": "No ISO 22716"},
+      {"rm_code": "RM-002", "material": "Glycerin (vegetable, IP grade)", "vendor": "V03", "landed_inr_per_kg": 113.50, "moq_kg": 500, "note": "Holds ISO 22716"},
+      {"rm_code": "RM-002", "material": "Glycerin (vegetable, IP grade)", "vendor": "V02", "landed_inr_per_kg": 111.80, "moq_kg": 250, "note": "No ISO 22716; our on-time record with them is 78%"},
+      {"rm_code": "RM-001", "material": "Propanediol (bio-based)", "vendor": "V01", "landed_inr_per_kg": 322.00, "moq_kg": 200, "note": ""},
+      {"rm_code": "RM-001", "material": "Propanediol (bio-based)", "vendor": "V02", "landed_inr_per_kg": 318.00, "moq_kg": 215, "note": "Our on-time record with them is 78%"}
+    ],
+    "decisions": [
+      {"rm_code": "RM-002", "material": "Glycerin (vegetable, IP grade)", "vendor": "V03", "price_inr_per_kg": 113.50, "annual_kg": 4800,
+       "reason": "The export customer's audit requires ISO 22716, and only Vembanad holds it."},
+      {"rm_code": "RM-001", "material": "Propanediol (bio-based)", "vendor": "V01", "price_inr_per_kg": 322.00, "annual_kg": 3600,
+       "reason": "Cheapest vendor with a reliable delivery record. Tungabhadra is cheaper but was on time for only 78% of our orders."}
+    ]
+  }
+}

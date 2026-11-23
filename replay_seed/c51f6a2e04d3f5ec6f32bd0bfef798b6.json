@@ -1,0 +1,1 @@
+{"content": [{"id": "toolu_01XRXhmX14xA82MxGtBPKQwD", "input": {"file": "IMG_20261113_rate_card.jpg", "page": null}, "name": "view_image", "type": "tool_use", "caller": {"type": "direct"}}], "stop_reason": "tool_use"}

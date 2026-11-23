@@ -1,0 +1,65 @@
+{
+ "id": 3,
+ "title": "The VP's question: cheapest per line, but only vendors who cleared quality",
+ "role": "Coimbatore plant manager",
+ "why": "The question that decides the award usually arrives late, from someone else. The buyer asks it in plain language instead of rebuilding a spreadsheet.",
+ "chat": [
+  {
+   "who": "Coimbatore plant manager",
+   "kind": "user",
+   "text": "What if we split it, cheapest per line, but only among vendors who cleared the quality questions?"
+  },
+  {
+   "who": "Analyst agent",
+   "kind": "agent",
+   "text": "Cleared-only cheapest split covers 9 of 10 lines, but 7 of those winners carry contradicted-claim or lateness flags.",
+   "detail": [
+    "Line | Vendor | Rs/kg | Cheapest overall | Spend INR | Status",
+    "RM-001 | Tungabhadra Actives LLP | 283.00 | 283.00 | 365,709.00 | Hold",
+    "RM-002 | Vembanad Botanicals Pvt. Ltd. | 112.00 | 112.00 | 174,944.00 | Proceed",
+    "RM-003 | Tungabhadra Actives LLP | 1,139.00 | 1,139.00 | 537,514.00 | Hold",
+    "RM-004 | Tungabhadra Actives LLP | 1,915.00 | 1,915.00 | 480,547.00 | Hold",
+    "RM-005 | Tungabhadra Actives LLP | 1,696.00 | 1,659.00 | 211,950.00 | Hold",
+    "RM-006 | Tungabhadra Actives LLP | 956.00 | 956.00 | 267,792.00 | Hold",
+    "RM-007 | Kovai Finechem Pvt. Ltd. | 1,080.00 | 1,080.00 | 155,520.00 | Proceed",
+    "RM-009 | Lumen Peptide Trading Pte. Ltd. | 25,146.00 | 24,506.00 | 3,520,410.00 | Hold",
+    "RM-010 | Lumen Peptide Trading Pte. Ltd. | 15,507.00 | 14,806.00 | 4,341,840.00 | Hold"
+   ]
+  },
+  {
+   "who": "System",
+   "kind": "agent",
+   "text": "Saved as an option: Quality-cleared split, Rs 10,056,225 for the 6-month need, against Rs 9,962,172 for the lowest bid.",
+   "detail": [
+    "Propanediol (bio-based): Tungabhadra",
+    "Glycerin (vegetable, IP grade): Vembanad",
+    "Niacinamide (PC grade): Tungabhadra",
+    "D-Panthenol: Tungabhadra",
+    "Caffeine anhydrous: Tungabhadra",
+    "Phenoxyethanol + Ethylhexylglycerin blend: Tungabhadra",
+    "Hydroxyethylcellulose: Kovai",
+    "Rosemary leaf extract: not awarded",
+    "Copper Tripeptide-1 solution: Lumen",
+    "Acetyl Tetrapeptide-3 solution: Lumen"
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "rule": "The answer came from analysis the agent ran on the quotes",
+   "passed": true,
+   "detail": "code saved with the answer"
+  },
+  {
+   "rule": "The answer states figures",
+   "passed": true,
+   "detail": "Cleared-only cheapest split covers 9 of 10 lines, but 7 of those winners carry contradicted-claim or lateness flags."
+  },
+  {
+   "rule": "The same question is saved as an option the manager can send for approval",
+   "passed": true,
+   "detail": "9 lines awarded"
+  }
+ ],
+ "passed": true
+}

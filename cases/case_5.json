@@ -1,0 +1,84 @@
+{
+ "id": 5,
+ "title": "Two plants, two winners: who approves, and what neither plant could see",
+ "role": "Category manager",
+ "why": "Each plant chooses for good local reasons. When two plants buy the same material from different vendors, both decisions go to the category manager with the combined picture.",
+ "chat": [
+  {
+   "who": "Coimbatore plant manager",
+   "kind": "user",
+   "text": "Sends the Recommended option for approval: Rs 10,182,568 for the 6-month need."
+  },
+  {
+   "who": "System",
+   "kind": "agent",
+   "text": "Approval routing: above the plant limit, so it goes to the category manager. Glycerin: Chennai buys it from Vembanad, Coimbatore chose Kovai, so both go to the category manager.",
+   "detail": [
+    "Propanediol (bio-based): only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Niacinamide (PC grade): only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "D-Panthenol: only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Caffeine anhydrous: only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Phenoxyethanol + Ethylhexylglycerin blend: only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Hydroxyethylcellulose: only 1 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Copper Tripeptide-1 solution: only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line.",
+    "Acetyl Tetrapeptide-3 solution: only 2 comparable quote(s), below our minimum of 3. Reason: these were all the vendors that quoted this line."
+   ]
+  },
+  {
+   "who": "System, to the category manager",
+   "kind": "agent",
+   "text": "Coimbatore chose Kovai: Rs 0.70/kg dearer than Vembanad, but its MOQ is 200 kg against 500 kg, so holding stock costs less. Chennai chose Vembanad: The export customer's audit requires ISO 22716, and only Vembanad holds it. Together the plants buy 7,924 kg a year, above Vembanad's 6,000 kg group tier, worth 4% off. If Coimbatore also moved to Vembanad, the group would save about Rs 36,134 a year.",
+   "detail": [
+    "Options: approve both as decided, or ask Coimbatore to move."
+   ]
+  },
+  {
+   "who": "Category manager",
+   "kind": "user",
+   "text": "Ask Coimbatore whether it can move to Vembanad."
+  },
+  {
+   "who": "Coimbatore plant manager",
+   "kind": "user",
+   "text": "Kovai is our current glycerin supplier, on time 95% of the time and two hours away. We don't want to switch during the February launch. We can move after March."
+  },
+  {
+   "who": "System, to the category manager",
+   "kind": "agent",
+   "text": "Coimbatore declined, with a reason. Suggested: Approve both decisions as made for now. Re-quote glycerin with Vembanad at the combined volume once Coimbatore's reason no longer applies, and record the saving left on the table."
+  },
+  {
+   "who": "Category manager",
+   "kind": "user",
+   "text": "Approve as suggested."
+  }
+ ],
+ "checks": [
+  {
+   "rule": "A cross-plant review was created for glycerin",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "rule": "Only the category manager sees it, not the plant managers",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "rule": "The combined volume discount was found",
+   "passed": true,
+   "detail": "net Rs 36,134 a year"
+  },
+  {
+   "rule": "Coimbatore sees the request and the saving, but not Chennai's price or volume",
+   "passed": true,
+   "detail": "fields shown: ['alt_price', 'from_vendor', 'group_saving', 'material', 'moq_alt', 'moq_now', 'note', 'own_effect', 'review_id', 'rm_code', 'to_vendor']"
+  },
+  {
+   "rule": "Both decisions are now approved, with the re-quote recorded",
+   "passed": true,
+   "detail": "CBE: Approved by category manager, re-quote planned; MAA: Approved by category manager"
+  }
+ ],
+ "passed": true
+}
