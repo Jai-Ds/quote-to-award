@@ -106,7 +106,9 @@ def lakh(v):
     """Rupees the way Indian buyers read them."""
     if v is None or v != v:
         return "-"
-    return f"Rs {v / 1e7:,.2f} crore" if abs(v) >= 1e7 else f"Rs {v / 1e5:,.2f} lakh" if abs(v) >= 1e5 else f"Rs {v:,.0f}"
+    def n(x):
+        return f"{x:,.2f}".rstrip("0").rstrip(".")
+    return f"Rs {n(v / 1e7)} crore" if abs(v) >= 1e7 else f"Rs {n(v / 1e5)} lakh" if abs(v) >= 1e5 else f"Rs {v:,.0f}"
 
 
 def ago(t):

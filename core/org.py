@@ -302,8 +302,8 @@ def plant_reply(req_id, u, accept, reason):
     if accept:
         cp["suggestion"] = f"Approve both plants on {short(p['to_vendor'])} with the group discount."
     else:
-        cp["suggestion"] = (f"Approve both decisions as made for now. Re-quote {p['material'].split(' (')[0].lower()} with {short(p['to_vendor'])} at the combined volume once "
-                            f"{plant_name(u['plant'])}'s reason no longer applies, and record the saving left on the table.")
+        cp["suggestion"] = (f"Approve both for now. Re-quote {p['material'].split(' (')[0].lower()} with {short(p['to_vendor'])} at the combined volume "
+                            f"once {plant_name(u['plant'])} can switch.")
     _update_review(card["id"], "pending", payload=cp, note=f"{plant_name(u['plant'])} replied: " + ("accepted." if accept else f"declined. {reason}"), who=u["name"])
 
 
